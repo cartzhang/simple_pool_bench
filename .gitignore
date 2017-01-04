@@ -2,6 +2,18 @@
 Thumbs.db
 ehthumbs.db
 
+#Unity file and vs file 
+.vs
+/Library
+/ProjectSettings
+/Temp
+/*.csproj
+/*.sln
+/build/build*
+UnityVS
+/Assets/UnityVS.meta
+/release
+
 # Folder config file
 Desktop.ini
 
