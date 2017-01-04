@@ -10,6 +10,7 @@ using UnityEngine.Internal;
 /// 代码例子： obj = gameObject.InstantiateFromPool(prefab);
 ///  gameObject.DestroyToPool(poolObjs[poolObjs.Count - 1], 0.2f);
 ///  具体可以参考HowToUse脚本和TestEffect。
+///  @cartzhang
 /// </summary>
 public static class GameObjectExten
 {
