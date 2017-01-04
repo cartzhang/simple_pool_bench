@@ -215,7 +215,7 @@ TestEffect.cs脚本文件，测试在协同中一边申请，一边回池会不�
 ## 六、工程分享地址：
 
 github地址：
-https://github.com/cartzhang/pool_bench_test/
+https://github.com/cartzhang/simple_pool_bench
 
 可以下载Assets文件，然后用unity测试。
 
