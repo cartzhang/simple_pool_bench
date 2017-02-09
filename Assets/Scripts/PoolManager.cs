@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using SLQJ_POOL;
 using UnityEngine.Internal;
 using System.Threading;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Linq;
 
 /// <summary>
@@ -26,9 +24,9 @@ public static class GameObjectExten
     /// <param name="position"></param>
     /// <param name="rotation"></param>
     /// <returns></returns>
-    public static GameObject InstantiateFromPool(this GameObject gameobject, Object original, Vector3 position, Quaternion rotation)
+    public static GameObject InstantiateFromPool(this GameObject gameobject, GameObject original, Vector3 position, Quaternion rotation)
     {
-        return PoolManager.PullObjcetFromPool(original as GameObject, position, rotation).gameObject;
+        return PoolManager.PullObjcetFromPool(original, position, rotation).gameObject;
     }
     /// <summary>
     /// 调用对象池，产生对象
@@ -36,18 +34,18 @@ public static class GameObjectExten
     /// <param name="gameobject"></param>
     /// <param name="original"></param>
     /// <returns></returns>
-    public static GameObject InstantiateFromPool(this GameObject gameobject, Object original)
+    public static GameObject InstantiateFromPool(this GameObject gameobject, GameObject original)
     {
-        return PoolManager.PullObjcetFromPool(original as GameObject).gameObject;
+        return PoolManager.PullObjcetFromPool(original).gameObject;
     }
     /// <summary>
     /// 对象返回对象池
     /// </summary>
     /// <param name="gameobject"></param>
     /// <param name="obj"></param>
-    public static void DestroyToPool(this GameObject gameobject, Object obj)
+    public static void DestroyToPool(this GameObject gameobject, GameObject obj)
     {
-        PoolManager.PushObjectPool((obj as GameObject).transform);
+        PoolManager.PushObjectPool(obj.transform);
     }
     /// <summary>
     /// 带延时的返回对象池
@@ -55,9 +53,9 @@ public static class GameObjectExten
     /// <param name="gameobject"></param>
     /// <param name="obj"></param>
     /// <param name="t"></param>
-    public static void DestroyToPool(this GameObject gameobject, Object obj, [DefaultValue("0.0F")] float t)
+    public static void DestroyToPool(this GameObject gameobject, GameObject obj, [DefaultValue("0.0F")] float t)
     {
-        PoolManager.PushObjectPool((obj as GameObject).transform, t);
+        PoolManager.PushObjectPool(obj.transform, t);
     }
 }
 
